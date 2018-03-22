@@ -1,4 +1,4 @@
-# Ruby version 
+# Ruby version
 2.3.2
 
 # Configuration

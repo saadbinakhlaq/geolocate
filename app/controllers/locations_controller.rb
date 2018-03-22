@@ -5,6 +5,9 @@ class LocationsController < ApplicationController
   rescue ActionController::ParameterMissing
     render json: { message: I18n.t('.address_params_missing'), status: 'error' },
     status: :bad_request
+  rescue SocketError, Errno::ECONNREFUSED, Net::OpenTimeout => e
+    logger.info "External API error: #{e}"
+    render json: { message: I18n.t('.timeout'), status: 'error' }, status: :service_unavailable
   end
 
   private

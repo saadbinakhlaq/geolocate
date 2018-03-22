@@ -13,7 +13,7 @@ class Geocode
 
   def lat_long
     response = call_api
-    message_body = JSON.parse(response.body)
+    message_body = JSON.parse(response.body) if response.code == 200
 
     case
     when response.code == 200 && message_body['status'] == 'ZERO_RESULTS'
@@ -31,6 +31,12 @@ class Geocode
       {
         status: I18n.t('error'),
         message: I18n.t('query_limit_exceeded')
+      }
+    else
+      Rails.logger.info "code: #{response.code}"
+      {
+        status: I18n.t('error'),
+        message: I18n.t('error_in_api')
       }
     end
   end

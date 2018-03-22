@@ -36,3 +36,5 @@ en:
   not_found: no matches found
   query_limit_exceeded: you have exceeded your query limit please wait before making a new query
   error: error
+  timeout: the operation timed out please try again later
+  error_in_api: error in api provider

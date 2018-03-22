@@ -6,7 +6,7 @@ describe LocationsController, type: :controller do
       it 'responds with bad request' do
         get :show
         expect(response.status).to eq(400)
-        expect(JSON.parse(response.body)).to eq({ 
+        expect(JSON.parse(response.body)).to eq({
           'message' => I18n.t('address_params_missing'),
           'status' => "error"
         })
@@ -39,5 +39,5 @@ describe LocationsController, type: :controller do
         })
       end
     end
-  end 
+  end
 end
