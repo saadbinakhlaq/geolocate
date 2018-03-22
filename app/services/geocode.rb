@@ -18,8 +18,8 @@ class Geocode
     case
     when response.code == 200 && message_body['status'] == 'ZERO_RESULTS'
       {
-        status: 'success',
-        message: 'no matches found'
+        status: I18n.t('success'),
+        message: I18n.t('not_found')
       }
     when response.code == 200 && message_body['status'] == 'OK'
       location = message_body['results'].first['geometry']['location']
@@ -29,8 +29,8 @@ class Geocode
       }
     when response.code == 200 && message_body['status'] == 'OVER_QUERY_LIMIT'
       {
-        status: 'error',
-        message: message_body['error_message']
+        status: I18n.t('error'),
+        message: I18n.t('query_limit_exceeded')
       }
     end
   end

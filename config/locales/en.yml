@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+  address_params_missing: query param address is missing
+  success: success
+  not_found: no matches found
+  query_limit_exceeded: you have exceeded your query limit please wait before making a new query
+  error: error

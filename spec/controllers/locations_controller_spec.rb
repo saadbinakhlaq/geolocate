@@ -7,8 +7,8 @@ describe LocationsController, type: :controller do
         get :show
         expect(response.status).to eq(400)
         expect(JSON.parse(response.body)).to eq({ 
-          "message" => "address params missing",
-          "status" => "error"
+          'message' => I18n.t('address_params_missing'),
+          'status' => "error"
         })
       end
     end
@@ -21,8 +21,8 @@ describe LocationsController, type: :controller do
 
         get :show, params: { address: 'csadaasdasdsadasds' }
         expect(JSON.parse(response.body)).to eq({
-          'status' => 'success',
-          'message' => 'no matches found'
+          'status' => I18n.t('success'),
+          'message' => I18n.t('not_found')
         })
       end
     end

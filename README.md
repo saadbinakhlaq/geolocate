@@ -1,24 +1,21 @@
-# README
+# Ruby version 
+2.3.2
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Configuration
 
-Things you may want to cover:
+Add google maps api key to the env
+`$ export GOOGLE_MAPS_API_KEY=YOUR_API_KEY`
 
-* Ruby version
+# How to run the test suite
 
-* System dependencies
+`$ rake`
 
-* Configuration
+# Usage
 
-* Database creation
+start the rails server
+`rails s`
+go to `/locations` and add address params as
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+ GET /locations?address=checkpoint charlie
+```
