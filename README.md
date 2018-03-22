@@ -6,6 +6,10 @@
 Add google maps api key to the env
 `$ export GOOGLE_MAPS_API_KEY=YOUR_API_KEY`
 
+# Setup
+
+run `bundle install`
+
 # How to run the test suite
 
 `$ rake`
@@ -17,5 +21,5 @@ start the rails server
 go to `/locations` and add address params as
 
 ```
- GET /locations?address=checkpoint charlie
+ GET /locations/?address=checkpoint charlie
 ```
